@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handbrake"
+version = "0.1.0"
+description = "Static gate for autonomous agents wired to destructive tools with no human-in-the-loop. Flags a destructive/irreversible tool (delete, payment, send, deploy, shell, overwrite) exposed to an autonomous LLM agent with no approval gate (HB001), and a destructive agent tool whose wiring/approval is uncertain (HB002). AST-based, no target code executed."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jay Tank", email = "tankjai24@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = ["rich>=13.0"]
+keywords = [
+    "cli",
+    "llm",
+    "agents",
+    "agent-safety",
+    "human-in-the-loop",
+    "langchain",
+    "crewai",
+    "autogen",
+    "static-analysis",
+    "linter",
+    "ci",
+    "ast",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+handbrake = "cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jay-tank/handbrake"
+Repository = "https://github.com/jay-tank/handbrake"
+Issues = "https://github.com/jay-tank/handbrake/issues"
+
+[tool.setuptools]
+py-modules = ["cli", "models", "scanner", "render"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
