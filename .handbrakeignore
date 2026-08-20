@@ -1,0 +1,4 @@
+# Paths handbrake should not scan (gitignore-style globs, path substrings).
+# One pattern per line. Example:
+# tests/fixtures/*
+# examples/*
